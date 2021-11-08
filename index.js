@@ -21,6 +21,7 @@ console.log(processFirstItem(['foo','bar'],function(str){return str+str}));
 // ⭐️ Example Challenge END ⭐️
 
 
+
 ///// M V P ///////
 
 /*✅ Task 1: counterMaker()
@@ -56,6 +57,7 @@ function counter2() {
 }
 
 
+
 /* ⚾️⚾️⚾️ ✅ Task 2: inning() ⚾️⚾️⚾️
 Use the inning function below to do the following:
   1. ✅ Return a random whole number of points between 0 and 2 scored by one team in an inning
@@ -73,12 +75,13 @@ function inning(){
 // console.log(inning());
 
 
-/* ⚾️⚾️⚾️ Task 3: finalScore() ⚾️⚾️⚾️
+
+/* ⚾️⚾️⚾️ ✅ Task 3: finalScore() ⚾️⚾️⚾️
 Use the finalScore function below to do the following:
-  1. Receive the callback function `inning` that was created in Task 2 
-  2. Receive a number of innings to be played
-  3. After each inning, update the score of the home and away teams
-  4. After the last inning, return an object containing the final (total) score of the innings played
+  1. ✅ Receive the callback function `inning` that was created in Task 2 
+  2. ✅ Receive a number of innings to be played
+  3. ✅ After each inning, update the score of the home and away teams
+  4. ✅ After the last inning, return an object containing the final (total) score of the innings played
   
   For example: invoking finalScore(inning, 9) might return this object:
 {
@@ -87,11 +90,23 @@ Use the finalScore function below to do the following:
 }
 */ 
 
-function finalScore(inningcb){
-  /*Code Here*/
+function finalScore(inningcb, inningCount){
+  let totalHomeScore = 0;
+  let totalAwayScore = 0;
+  for (let i = 0; i < inningCount; i++) {
+    totalHomeScore = totalHomeScore + inningcb();
+    totalAwayScore = totalAwayScore + inningcb();
+  }
+  return {
+    Home: totalHomeScore,
+    Away: totalAwayScore,
+  };
 }
 
-finalScore()
+// TEST
+// console.log(finalScore(inning, 9));
+
+
 
 /* ⚾️⚾️⚾️ Task 4: getInningScore() ⚾️⚾️⚾️
 Use the getInningScore() function below to do the following:
