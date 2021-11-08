@@ -23,16 +23,19 @@ console.log(processFirstItem(['foo','bar'],function(str){return str+str}));
 
 ///// M V P ///////
 
-/*Task 1: counterMaker()
+/*✅ Task 1: counterMaker()
   
   Study the code for counter1 and counter2, then answer the questions below.
   
-  1. What is the difference between counter1 and counter2?
+  1. ✅ What is the difference between counter1 and counter2?
+    Answer: counter1 locks the count variable within the function so it cannot be accessed outside of the function.
   
-  2. Which of the two uses a closure? How can you tell?
+  2. ✅ Which of the two uses a closure? How can you tell?
+    Answer: counter1 uses a closure because the returned function accesses the count variable in its parent function.
   
-  3. In what scenario would the counter1 code be preferable? In what scenario would 
+  3. ✅ In what scenario would the counter1 code be preferable? In what scenario would 
      counter2 be better?  
+     Answer: With counter1, you could reuse the function to keep track of multiple different things by assigning the function to different variables. Whereas with counter2, the count is in the global scope and would get overwritten if you tried to use it to track different things, but it would be great if you needed to access the global count of a thing from different parts of your program.
 */
 
 // counter1 code
@@ -53,18 +56,21 @@ function counter2() {
 }
 
 
-/* ⚾️⚾️⚾️ Task 2: inning() ⚾️⚾️⚾️
+/* ⚾️⚾️⚾️ ✅ Task 2: inning() ⚾️⚾️⚾️
 Use the inning function below to do the following:
-  1. Return a random whole number of points between 0 and 2 scored by one team in an inning
+  1. ✅ Return a random whole number of points between 0 and 2 scored by one team in an inning
   
   For example: invoking inning() should return a numerical score value of 0, 1, or 2
   
 NOTE: This will be a callback function for the tasks below
 */
 
-function inning(/*Code Here*/){
-    /*Code Here*/
+function inning(){
+    return Math.floor(Math.random() * 3);
 }
+
+// TEST
+// console.log(inning());
 
 
 /* ⚾️⚾️⚾️ Task 3: finalScore() ⚾️⚾️⚾️
@@ -81,9 +87,11 @@ Use the finalScore function below to do the following:
 }
 */ 
 
-function finalScore(/*code Here*/){
+function finalScore(inningcb){
   /*Code Here*/
 }
+
+finalScore()
 
 /* ⚾️⚾️⚾️ Task 4: getInningScore() ⚾️⚾️⚾️
 Use the getInningScore() function below to do the following:
