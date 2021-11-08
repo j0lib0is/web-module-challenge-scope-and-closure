@@ -40,7 +40,7 @@ Using VSCode and Command Line:
 
 ### Task 2a - MVP code
 
-Find the file `index.js` and complete all tasks.
+✅ Find the file `index.js` and complete all tasks.
 
 ### Testing & Debugging
 
@@ -55,11 +55,11 @@ Find the file `index.js` and complete all tasks.
 
 ### Task 2b - Written questions
 
-Edit the `ReadMe` file with your answers to the questions below.
+✅ Edit the `ReadMe` file with your answers to the questions below.
 
 1. ✅ In your own words, define closure (1-2 sentences).
    Answer: Closure is created when a function reaches into an outer function to access a value defined in the outer function. It captures the lexical environment which includes any variables at the time of execution allowing inner functions to access the variables of its parent functions.
-2. Study the following code, then answer the questions below.
+2. ✅ Study the following code, then answer the questions below.
 
 ```js
 function personalDice(name) {
@@ -78,11 +78,12 @@ dansRoll();
 dansRoll();
 ```
 
-a. Where is closure used in this code? How can you tell?
+a. ✅ Where is closure used in this code? How can you tell?
+Answer: Closure is used when the anonymous function accesses the 'name' parameter of the personalDice function.
 b. ✅ Compare and contrast calling `dansRoll` the first and second time. What is always the same? What could change?
 Answer: The argument 'Dan' remains the same since it's passed in when dansRoll is invoked. But newRoll could be different since the Math.random method will run each time dansRoll is invoked.
 c. ✅ What is the lexical scope of `newRoll`?
-Answer: The lexical scope is its parent function which includes the name parameter.
+Answer: The lexical scope is the personalDice function which includes the name parameter.
 
 ### Task 3 - Stretch Goals
 
